@@ -2,7 +2,6 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	cors "github.com/rs/cors/wrapper/gin"
 	"log"
 	"net/http"
 	"os"
@@ -25,12 +24,11 @@ func getStudent(context *gin.Context) {
 func main() {
 	router := gin.Default()
 
-	router.Use(cors.Default())
 	router.GET("/student", getStudent) // first endpoint
 
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = "8080"
+		port = "808"
 	}
 	if err := router.Run(":" + port); err != nil {
 		log.Panicf("error: %s", err)

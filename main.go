@@ -28,7 +28,7 @@ func main() {
 
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = "808"
+		port = "8080"
 	}
 	if err := router.Run(":" + port); err != nil {
 		log.Panicf("error: %s", err)
